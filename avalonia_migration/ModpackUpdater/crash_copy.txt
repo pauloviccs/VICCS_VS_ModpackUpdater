@@ -1,0 +1,12 @@
+System.Collections.Generic.KeyNotFoundException: Static resource 'ExpandHintConverter' not found.
+   at Avalonia.Markup.Xaml.MarkupExtensions.StaticResourceExtension.ProvideValue(IServiceProvider serviceProvider)
+   at ModpackUpdater.Views.MainWindow.!XamlIlPopulate(IServiceProvider, MainWindow) in G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\Views/MainWindow.axaml:line 181
+   at ModpackUpdater.Views.MainWindow.!XamlIlPopulateTrampoline(MainWindow)
+   at ModpackUpdater.Views.MainWindow.InitializeComponent(Boolean loadXaml) in G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\obj\Release\net8.0\Avalonia.Generators\Avalonia.Generators.NameGenerator.AvaloniaNameSourceGenerator\ModpackUpdater.Views.MainWindow.g.cs:line 24
+   at ModpackUpdater.Views.MainWindow..ctor() in G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\Views\MainWindow.axaml.cs:line 11
+   at ModpackUpdater.App.OnFrameworkInitializationCompleted() in G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\App.axaml.cs:line 26
+   at Avalonia.AppBuilder.SetupUnsafe()
+   at Avalonia.AppBuilder.Setup()
+   at Avalonia.AppBuilder.SetupWithLifetime(IApplicationLifetime lifetime)
+   at Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime(AppBuilder builder, String[] args, Action`1 lifetimeBuilder)
+   at ModpackUpdater.Program.Main(String[] args) in G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\Program.cs:line 20

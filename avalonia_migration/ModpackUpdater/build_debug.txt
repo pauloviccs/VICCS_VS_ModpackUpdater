@@ -1,0 +1,11 @@
+  Determinando os projetos a serem restaurados...
+  Todos os projetos estão atualizados para restauração.
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\Views\MainWindow.axaml : Avalonia error AVLN2002: Duplicate x:Class directive, ModpackUpdater.Views.MainWindow is already used in /Views/MainWindow.axaml [G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj]
+
+FALHA da compilação.
+
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\Views\MainWindow.axaml : Avalonia error AVLN2002: Duplicate x:Class directive, ModpackUpdater.Views.MainWindow is already used in /Views/MainWindow.axaml [G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj]
+    0 Aviso(s)
+    1 Erro(s)
+
+Tempo Decorrido 00:00:00.70

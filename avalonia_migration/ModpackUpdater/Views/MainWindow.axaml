@@ -1,0 +1,253 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ModpackUpdater.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700"
+        x:Class="ModpackUpdater.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="avares://ModpackUpdater/Assets/icon.ico"
+        Title="VS Modpack Updater"
+        Width="1000" Height="700"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid>
+        <!-- Background Image Slideshow -->
+        <Image Source="{Binding CurrentBackgroundImage}" Stretch="UniformToFill" Opacity="0.5" />
+        
+        <!-- Main Overlay Gradient -->
+        <Border>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Offset="0" Color="#CC000000"/>
+                    <GradientStop Offset="1" Color="#E6000000"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <!-- Window Controls (Custom) -->
+        <StackPanel HorizontalAlignment="Right" 
+                    VerticalAlignment="Top" 
+                    Orientation="Horizontal" 
+                    Margin="0,0,10,0"
+                    Spacing="5">
+            <!-- Minimize Button -->
+            <Button Classes="Tertiary" 
+                    Padding="10" 
+                    Click="MinimizeWindow_Click"
+                    ToolTip.Tip="Minimizar">
+                <PathIcon Data="M19,13H5V11H19V13Z" 
+                          Foreground="{StaticResource MutedForegroundBrush}" 
+                          Width="16" Height="16"/>
+            </Button>
+            
+            <!-- Close Button -->
+            <Button Classes="Tertiary" 
+                    Padding="10" 
+                    Click="CloseWindow_Click"
+                    ToolTip.Tip="Fechar">
+                <PathIcon Data="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" 
+                          Foreground="{StaticResource MutedForegroundBrush}" 
+                          Width="16" Height="16"/>
+            </Button>
+        </StackPanel>
+
+        <!-- Content Container -->
+        <Grid RowDefinitions="Auto, *, Auto" Margin="40">
+            
+            <!-- Header -->
+            <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+                <StackPanel Grid.Column="0" Spacing="2">
+                    <TextBlock Text="VICCS - MODPACK UPDATER" 
+                               FontSize="18" 
+                               FontWeight="ExtraBold" 
+                               Foreground="{StaticResource PrimaryBrush}" 
+                               LetterSpacing="1"/>
+                    <TextBlock Text="VINTAGE STORY MODPACK UPDATER" 
+                               FontSize="12" 
+                               FontWeight="SemiBold" 
+                               Foreground="{StaticResource MutedForegroundBrush}" 
+                               LetterSpacing="1.5" 
+                               Margin="2,0,0,0"/>
+                </StackPanel>
+                
+                <!-- Settings Button Placeholder -->
+                <Button Grid.Column="1" 
+                        Command="{Binding OpenSettingsCommand}"
+                        Classes="Tertiary" 
+                        Padding="10" 
+                        CornerRadius="8">
+                    <PathIcon Data="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10M10,22C9.75,22 9.54,21.82 9.5,21.58L9.13,18.93C8.5,18.68 7.96,18.34 7.44,17.94L4.95,18.95C4.73,19.03 4.46,18.95 4.34,18.73L2.34,15.27C2.21,15.05 2.27,14.78 2.46,14.63L4.56,12.97L4.5,12L4.56,11.03L2.46,9.37C2.27,9.22 2.21,8.95 2.34,8.73L4.34,5.27C4.46,5.05 4.73,4.96 4.95,5.05L7.44,6.05C7.96,5.66 8.5,5.32 9.13,5.07L9.5,2.42C9.54,2.18 9.75,2 10,2H14C14.25,2 14.46,2.18 14.5,2.42L14.87,5.07C15.5,5.32 16.04,5.66 16.56,6.05L19.05,5.05C19.27,4.96 19.54,5.05 19.66,5.27L21.66,8.73C21.79,8.95 21.73,9.22 21.54,9.37L19.44,11.03L19.5,12L19.44,12.97L21.54,14.63C21.73,14.78 21.79,15.05 21.66,15.27L19.66,18.73C19.54,18.95 19.27,19.03 19.05,18.95L16.56,17.94C16.04,18.34 15.5,18.68 14.87,18.93L14.5,21.58C14.46,21.82 14.25,22 14,22H10Z" 
+                              Foreground="{StaticResource MutedForegroundBrush}" 
+                              Width="20" Height="20"/>
+                </Button>
+            </Grid>
+
+            <!-- Center Content -->
+            <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500">
+                <Border Classes="GlassCard" Padding="30">
+                    <StackPanel Spacing="20">
+                        
+                        <!-- Status Badge -->
+                        <Border CornerRadius="20" 
+                                BorderThickness="1" 
+                                BorderBrush="{StaticResource BorderBrush}" 
+                                Background="#33000000" 
+                                HorizontalAlignment="Center" 
+                                Padding="15,5">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Ellipse Width="8" Height="8" Fill="{Binding StatusBrush}" /> 
+                                <!-- TODO: Status Color Converter -->
+                                <TextBlock Text="{Binding StatusMessage}" Foreground="{StaticResource ForegroundBrush}" FontSize="14" />
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Changelog Card -->
+                        <Border Classes="GlassCard" 
+                                Padding="20" 
+                                Margin="0,10,0,0"
+                                MaxWidth="460"
+                                Cursor="Hand"
+                                PointerPressed="ChangelogCard_Click">
+                            <StackPanel Spacing="15">
+                                
+                                <!-- Header -->
+                                <Grid ColumnDefinitions="*, Auto">
+                                    <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="10">
+                                        <PathIcon Data="M19,3H14.82C14.25,1.44 12.53,0.64 11,1.2C10.14,1.5 9.5,2.16 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7M17,11H7V9H17V11M15,15H7V13H15V15Z" 
+                                                  Foreground="{StaticResource PrimaryBrush}" 
+                                                  Width="20" Height="20"/>
+                                        <!-- Show "NEW VERSION" when update available -->
+                                        <TextBlock Text="NEW VERSION" 
+                                                   FontSize="14" 
+                                                   FontWeight="Bold" 
+                                                   Foreground="{StaticResource PrimaryBrush}" 
+                                                   LetterSpacing="1"
+                                                   IsVisible="{Binding IsUpdateAvailable}"/>
+                                        <!-- Show "CURRENT VERSION" when no update -->
+                                        <TextBlock Text="CURRENT VERSION" 
+                                                   FontSize="14" 
+                                                   FontWeight="Bold" 
+                                                   Foreground="{StaticResource PrimaryBrush}" 
+                                                   LetterSpacing="1"
+                                                   IsVisible="{Binding !IsUpdateAvailable}"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="1" 
+                                               Text="{Binding VersionDisplayText}"
+                                               FontSize="18" 
+                                               FontWeight="Bold" 
+                                               Foreground="{StaticResource PrimaryBrush}"/>
+                                </Grid>
+                                
+                                <!-- Changelog Lines - Expandable -->
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                                    <ScrollViewer.MaxHeight>
+                                        <Binding Path="IsChangelogExpanded">
+                                            <Binding.Converter>
+                                                <vm:ExpandedHeightConverter CollapsedHeight="80" ExpandedHeight="400"/>
+                                            </Binding.Converter>
+                                        </Binding>
+                                    </ScrollViewer.MaxHeight>
+                                    <ItemsControl ItemsSource="{Binding NewsLines}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding}" 
+                                                           FontSize="13" 
+                                                           Foreground="{StaticResource MutedForegroundBrush}" 
+                                                           TextWrapping="Wrap"
+                                                           MaxWidth="420"
+                                                           Margin="0,3"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </ScrollViewer>
+                                
+                                <!-- Hint to click -->
+                                <TextBlock FontSize="11"
+                                           Foreground="{StaticResource MutedForegroundBrush}"
+                                           HorizontalAlignment="Center"
+                                           Opacity="0.6">
+                                    <TextBlock.Text>
+                                        <Binding Path="IsChangelogExpanded">
+                                            <Binding.Converter>
+                                                <vm:ExpandHintConverter/>
+                                            </Binding.Converter>
+                                        </Binding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Progress Bar (Visible only when updating) -->
+                        <StackPanel IsVisible="{Binding IsBusy}">
+                            <TextBlock Text="{Binding StatusMessage}" 
+                                       Foreground="{StaticResource PrimaryBrush}" 
+                                       HorizontalAlignment="Center" 
+                                       Margin="0,0,0,5"
+                                       FontSize="12"/>
+                            <ProgressBar Value="{Binding ProgressValue}" 
+                                         Height="6" 
+                                         Foreground="{StaticResource PrimaryBrush}" 
+                                         Background="#333333" 
+                                         CornerRadius="3"
+                                         Maximum="100"/>
+                             <TextBlock Text="{Binding ProgressValue, StringFormat=\{0:0\}%}" 
+                                        Foreground="{StaticResource MutedForegroundBrush}" 
+                                        HorizontalAlignment="Right" 
+                                        FontSize="10" 
+                                        Margin="0,2,0,0"/>
+                        </StackPanel>
+                        
+                        <!-- Action Button -->
+                         <Button Classes="Action" 
+                                 HorizontalAlignment="Stretch" 
+                                 HorizontalContentAlignment="Center"
+                                 Command="{Binding StartUpdateCommand}"
+                                 IsEnabled="{Binding IsUpdateAvailable}"
+                                 IsVisible="{Binding !IsBusy}">
+                             <TextBlock Text="ATUALIZAR AGORA" 
+                                        FontWeight="Bold" 
+                                        LetterSpacing="1"/>
+                         </Button>
+
+                            <Button Classes="Tertiary" 
+                                 Command="{Binding CheckForUpdatesCommand}" 
+                                 HorizontalAlignment="Center"
+                                 Padding="15,8"
+                                 IsVisible="{Binding !IsBusy}">
+                                <TextBlock Text="VERIFICAR INTEGRIDADE" 
+                                           FontSize="12"
+                                           FontWeight="SemiBold"
+                                           Foreground="{StaticResource MutedForegroundBrush}"
+                                           LetterSpacing="0.5"/>
+                            </Button>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Footer -->
+            <Grid Grid.Row="2" ColumnDefinitions="*, *" Margin="30,20">
+                <TextBlock Grid.Column="0" 
+                           Text="@VICCS" 
+                           FontSize="11" 
+                           Foreground="{StaticResource MutedForegroundBrush}" 
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" 
+                           Text="© 2025 VS Modpack Updater" 
+                           FontSize="11" 
+                           Foreground="{StaticResource MutedForegroundBrush}" 
+                           HorizontalAlignment="Right" 
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

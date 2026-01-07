@@ -1,0 +1,21 @@
+  Determinando os projetos a serem restaurados...
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605: Aviso como Erro: Downgrade de pacote detectado: Avalonia de 11.2.1 para 11.2.0. Referencie o pacote diretamente do projeto para selecionar uma versão diferente. 
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605:  ModpackUpdater -> Semi.Avalonia 11.2.1 -> Avalonia (>= 11.2.1) 
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605:  ModpackUpdater -> Avalonia (>= 11.2.0)
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605: Aviso como Erro: Downgrade de pacote detectado: Avalonia de 11.2.1 para 11.2.0. Referencie o pacote diretamente do projeto para selecionar uma versão diferente. 
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605:  ModpackUpdater -> Semi.Avalonia.ColorPicker 11.2.1 -> Avalonia (>= 11.2.1) 
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605:  ModpackUpdater -> Avalonia (>= 11.2.0)
+  Falha ao restaurar G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj (em 266 ms).
+
+FALHA da compilação.
+
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605: Aviso como Erro: Downgrade de pacote detectado: Avalonia de 11.2.1 para 11.2.0. Referencie o pacote diretamente do projeto para selecionar uma versão diferente. 
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605:  ModpackUpdater -> Semi.Avalonia 11.2.1 -> Avalonia (>= 11.2.1) 
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605:  ModpackUpdater -> Avalonia (>= 11.2.0)
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605: Aviso como Erro: Downgrade de pacote detectado: Avalonia de 11.2.1 para 11.2.0. Referencie o pacote diretamente do projeto para selecionar uma versão diferente. 
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605:  ModpackUpdater -> Semi.Avalonia.ColorPicker 11.2.1 -> Avalonia (>= 11.2.1) 
+G:\GitHub\Vibecoding\VintageStoryMODS\4. AutoUpdater\VICCS_VS_ModpackUpdater\avalonia_migration\ModpackUpdater\ModpackUpdater.csproj : error NU1605:  ModpackUpdater -> Avalonia (>= 11.2.0)
+    0 Aviso(s)
+    2 Erro(s)
+
+Tempo Decorrido 00:00:00.72

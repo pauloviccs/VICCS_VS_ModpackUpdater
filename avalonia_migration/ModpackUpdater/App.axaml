@@ -1,0 +1,79 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="ModpackUpdater.App"
+             xmlns:local="using:ModpackUpdater"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Resources>
+        <!-- Lovable Theme Colors -->
+        <Color x:Key="BackgroundColor">#141414</Color>
+        <Color x:Key="ForegroundColor">#FFFFFF</Color>
+        <Color x:Key="CardColor">#1A1A1A</Color>
+        <Color x:Key="CardHoverColor">#262626</Color>
+        <Color x:Key="PrimaryColor">#E1B12C</Color>
+        <Color x:Key="PrimaryHoverColor">#F2C94C</Color>
+        <Color x:Key="MutedColor">#2E2E2E</Color>
+        <Color x:Key="MutedForegroundColor">#999999</Color>
+        <Color x:Key="BorderColor">#333333</Color>
+        <Color x:Key="DestructiveColor">#DB2727</Color>
+        <Color x:Key="SuccessColor">#21C45D</Color>
+
+        <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
+        <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}"/>
+        <SolidColorBrush x:Key="CardBrush" Color="{StaticResource CardColor}"/>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+        <SolidColorBrush x:Key="MutedBrush" Color="{StaticResource MutedColor}"/>
+        <SolidColorBrush x:Key="MutedForegroundBrush" Color="{StaticResource MutedForegroundColor}"/>
+        <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}"/>
+        <SolidColorBrush x:Key="DestructiveBrush" Color="{StaticResource DestructiveColor}"/>
+        <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
+        
+        <!-- Gradients -->
+        <LinearGradientBrush x:Key="GoldGradientBrush" StartPoint="0%,0%" EndPoint="100%,100%">
+            <GradientStop Offset="0" Color="#F4D03F" /> <!-- Gold Light -->
+            <GradientStop Offset="0.5" Color="#E1B12C" /> <!-- Gold -->
+            <GradientStop Offset="1" Color="#B7950B" /> <!-- Gold Dark -->
+        </LinearGradientBrush>
+    </Application.Resources>
+
+    <Application.Styles>
+        <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" />
+        <StyleInclude Source="avares://Semi.Avalonia.ColorPicker/Index.axaml" />
+        
+        <!-- Custom Button Style to match ActionButton -->
+        <Style Selector="Button.Action">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+            <Setter Property="Foreground" Value="#141414" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="20,10" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Property="Background" Duration="0:0:0.2" />
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button.Action:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#F2C94C" />
+        </Style>
+        <Style Selector="Button.Action:pressed /template/ ContentPresenter">
+            <Setter Property="RenderTransform" Value="scale(0.95)" />
+        </Style>
+        
+        <!-- Glass Card Style -->
+        <Style Selector="Border.GlassCard">
+            <Setter Property="Background" Value="#BF141414" /> <!-- 75% opacity hex roughly -->
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#33E1B12C" /> <!-- Low opacity gold border -->
+            <Setter Property="BoxShadow" Value="0 8 32 0 #66000000" />
+        </Style>
+
+    </Application.Styles>
+</Application>
