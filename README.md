@@ -1,6 +1,6 @@
 # VS Modpack Updater
 
-Ferramenta automatizada para gerenciamento e atualização de modpacks do Vintage Story, desenvolvida com Electron, React e TypeScript. Projetada especificamente para o servidor TarValon, mas adaptável para outros usos.
+Ferramenta automatizada para gerenciamento e atualização de modpacks do Vintage Story, desenvolvida com AvaloniaUI framework.
 
 ## 🚀 Sobre o Projeto
 
@@ -32,47 +32,5 @@ O **VS Modpack Updater** simplifica a vida dos jogadores, garantindo que todos e
     -   Uma mensagem avisará quando estiver "Pronto para jogar!".
 5.  **Jogue**: Pode abrir o Vintage Story com a certeza de compatibilidade.
 
-### Para Desenvolvedores
-
-Se você deseja modificar ou compilar o projeto:
-
-#### Pré-requisitos
--   Node.js (v18+)
--   NPM ou Yarn
-
-#### Instalação
-
-```bash
-# Clone o repositório
-git clone [URL_DO_REPOSITORIO]
-
-# Entre na pasta
-cd VS_TarValon_ModpackUpdater
-
-# Instale as dependências
-npm install
-```
-
-#### Comandos Disponíveis
-
--   `npm run dev`: Inicia o ambiente de desenvolvimento (Vite + Electron).
--   `npm run build`: Compila o projeto para produção (gera executável em `dist-build`).
--   `npm run preview`: Visualiza o build de produção localmente.
-
-## ⚙️ Configuração Técnica
-
-O updater utiliza um manifesto remoto para controle de versão.
--   **Manifest Source**: Atualmente configurado para ler de um Pastebin raw (`src/electron/handlers/updater.js`).
--   **Estrutura do Manifesto Remoto**:
-    ```json
-    {
-      "version": "1.0.X",
-      "downloadUrl": "LINK_DIRETO_DO_DROPBOX_OU_OUTRO",
-      "news": "Notas da atualização..."
-    }
-    ```
-
 ## 📝 Créditos
-
-Desenvolvido por **Vibecoding** para a comunidade Vintage Story.
-Design por **VICCS 2025 ©**.
+Design por (mim) **VICCS 2025 ©**.
